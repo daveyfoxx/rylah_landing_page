@@ -1,0 +1,225 @@
+:root{
+    --color-primary: #86358b;
+    --color-secondary: #62296b;
+    --color-tertiary: #f405e0;
+    --colorr-light: #fff;
+	--color-nav: #36184a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: montsterrat, sans-serif;
+    background: var(--color-nav);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+section {
+background-image: url("images/background_.jpg");
+background-color: rebeccapurple;
+background-size: cover;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+
+nav .container{
+    width: 86%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .container img{
+    width: 3.2rem;
+}
+
+nav .container #showNav, 
+nav .container #toggleNav {
+    display: none;
+}
+
+nav .container ul{
+    display: flex;
+    gap: 4rem;
+}
+
+a{
+    color: var(--colorr-light);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: all 300ms ease;
+}
+
+a:hover{
+    color: var(--color-tertiary);
+}
+
+/* ===== HEADER SECTION ===== */
+section{
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100%;
+    text-align: center;
+    color: var(--colorr-light);
+    position: relative;
+    top: 3rem;
+}
+
+section .container h1{
+    font-size: 10rem;
+	font-weight: 800;
+    text-transform: uppercase;
+}
+
+section .container h3{
+    text-transform: uppercase;
+    font-size: 2rem;
+	font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+section .container p{
+    font-size: 1rem;
+	font-weight: 300;
+    margin-bottom: 3rem;
+}
+
+section .container input[type="search"] {
+    background: transparent;
+    border: 1px solid var(--colorr-light);
+    border-radius: 2rem;
+    padding: 0.7rem 1.5rem;
+    color: var(--colorr-light);
+    letter-spacing: 0.1rem;
+    margin-bottom: 2rem;
+}
+
+section .container input[type="search"]::placeholder {
+    color: var(--colorr-light);
+    letter-spacing: 0.1rem;
+}
+
+section .container p{
+    letter-spacing: 0.06rem;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 40rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+section .container a{
+    background: linear-gradient(
+        to right, 
+        var(--color-secondary),
+        var(--color-primary)
+    );
+    padding: 0.7rem 3rem;
+    margin: 0.4rem;
+    border-radius: 2rem;
+    position: relative;
+    transition: all 300ms ease;
+}
+
+
+section .container a:hover{
+    background: linear-gradient(
+        to left, 
+        var(--color-secondary),
+        var(--color-primary)
+    );
+}
+
+
+/* ===== MEDIA QUERY FOR SMALLER SCREENS ===== */
+@media screen and (max-width: 700px){
+    /* navigation */
+	
+	section {
+background-position: center;
+}
+	
+    nav .container {
+        width: 100%;
+        padding: 1rem;
+        background: var(--color-nav);
+    }
+    
+    nav img{
+        margin-left: 1rem;
+    }
+
+    /* NAVBAR */
+    nav .container #toggleNav {
+        display: inline-block;
+        color: var(--colorr-light);
+        font-size: 2rem;
+        margin-right: 1rem;
+        cursor: pointer;
+        transition: all 300ms ease;
+    }
+
+    nav .container #toggleNav:hover {
+        color: var(--color-tertiary)
+    }
+
+    nav .container #showNav:checked ~ ul {
+        display: block;
+    }
+
+    nav .container ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+    }
+
+    nav .container ul li {
+        text-align: center;
+        background: var(--color-primary);
+        padding: 2rem 0;
+        transition: all 300ms ease;
+        cursor: pointer;
+    }
+
+    nav .container ul li:hover {
+        background: var(--color-tertiary);
+
+    }
+
+    /* HEADER SECTION */
+    section .container h1 {
+        font-size: 5.3rem;
+    }
+    section .container h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        padding: 1rem;
+		font-weight: 300;
+    }
+
+    section .containera {
+        padding: 1rem 2rem;
+    }
+}
